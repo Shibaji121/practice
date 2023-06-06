@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import "./App.css";
+import Higher from "./Higher";
 
-function App() {
+function App(props) {
   const [count, setCount] = useState(0);
 
   const doubledCount = useMemo(() => {
@@ -17,9 +18,10 @@ function App() {
     <div>
       <p>Count: {count}</p>
       <p>Doubled Count: {doubledCount}</p>
+      <p>Came from HOC: {props.value}</p>
       <button onClick={incrementCount}>Increment</button>
     </div>
   );
 }
 
-export default App;
+export default Higher(App);
