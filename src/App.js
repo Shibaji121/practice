@@ -1,9 +1,11 @@
-import { useMemo, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import "./App.css";
 import Higher from "./Higher";
+import { MyContext } from "./ExampleContext";
 
 function App(props) {
   const [count, setCount] = useState(0);
+  const cont = useContext(MyContext);
 
   const doubledCount = useMemo(() => {
     console.log("Expensive computation");
@@ -19,6 +21,7 @@ function App(props) {
       <p>Count: {count}</p>
       <p>Doubled Count: {doubledCount}</p>
       <p>Came from HOC: {props.value}</p>
+      <p>Came From Context: {cont.name}</p>
       <button onClick={incrementCount}>Increment</button>
     </div>
   );
