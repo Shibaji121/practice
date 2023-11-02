@@ -4,6 +4,7 @@ import Higher from "./Higher";
 import { MyContext } from "./ExampleContext";
 import useTheme from "./useTheme";
 import StarPattern from "./StarPattern";
+import SearchBox from "./SearchBox";
 
 function App(props) {
   const [count, setCount] = useState(0);
@@ -29,6 +30,7 @@ function App(props) {
       <button onClick={incrementCount}>Increment</button>
       <button onClick={toggleTheme}>Change The Theme</button>
       <StarPattern limit={3} />
+      <SearchBox />
     </div>
   );
 }
