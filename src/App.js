@@ -3,6 +3,7 @@ import "./App.css";
 import Higher from "./Higher";
 import { MyContext } from "./ExampleContext";
 import useTheme from "./useTheme";
+import StarPattern from "./StarPattern";
 
 function App(props) {
   const [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App(props) {
       <p>Current Theme is: {theme}</p>
       <button onClick={incrementCount}>Increment</button>
       <button onClick={toggleTheme}>Change The Theme</button>
+      <StarPattern limit={3} />
     </div>
   );
 }
